@@ -1,66 +1,83 @@
 <!DOCTYPE html>
-<html ng-app="resumev2">
+<html lang="en" ng-app="resumev2">
 
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Nate Harris, Staff Software Engineer in Colorado Springs, CO." />
     <title>Nate Harris Resume</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="app.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.11/angular.min.js"></script>
     <script src="config.js"></script>
     <script src="controller.js"></script>
-
   </head>
 
   <body>
-      <div ng-controller="ResumeController as ctrl">
-        <div class="wrapper row">
-          <div class="left-col col-xs-4">
-            <div class="name-info">
-              <img ng-src="{{ctrl.config.resumeImageSrc}}" class="circle-img" />
-              <h2 class="name-header">{{ctrl.config.resumeOwner}}</h2>
-              <h4>{{ctrl.config.occupation}}</h4>
-              <h4>{{ctrl.config.location}}</h4>
+    <div class="page" ng-controller="ResumeController as ctrl" ng-cloak>
+
+      <aside class="side">
+        <img class="photo" ng-if="ctrl.config.resumeImageSrc" ng-src="{{ctrl.config.resumeImageSrc}}" alt="" />
+        <h1 class="name">{{ctrl.config.resumeOwner}}</h1>
+        <p class="role">{{ctrl.config.occupation}}</p>
+        <p class="place">{{ctrl.config.location}}</p>
+
+        <ul class="links">
+          <li ng-repeat="info in ctrl.config.moreInfo"><a ng-href="{{info.link}}">{{info.linkName}}</a></li>
+        </ul>
+
+        <section>
+          <h2>Skills</h2>
+          <dl class="skills">
+            <div ng-repeat="skill in ctrl.config.skills">
+              <dt>{{skill.label}}</dt>
+              <dd>{{skill.items}}</dd>
             </div>
-            <div class="sub-info">
-              <div class="sub-section education">
-                <i class="large-icon fa fa-2x fa-graduation-cap" aria-hidden="true"></i>
-                <h2 class="sub-info-heading">Education</h2>
-                <img ng-src="{{ctrl.config.education.schoolLogo}}" class="circle-img" />
-                <strong>{{ctrl.config.education.schoolName}}</strong>
-                <p>{{ctrl.config.education.fieldOfStudyInfo}}</p>
-              </div>
-              <div class="sub-section more-info references">
-                <i class="large-icon fa fa-2x fa-info-circle" aria-hidden="true"></i>
-                <h2 class="sub-info-heading">More Info</h2>
-                <ul>
-                  <li ng-repeat="info in ctrl.config.moreInfo"><i class="more-info-icon fa fa-2x {{info.icon}}"></i> <a ng-href="{{info.link}}">{{info.linkName}}</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="right-col col-xs-8">
-            <div class="work-experience right-col-section">
-              <div ng-repeat="experience in ctrl.config.experiences" class="row work-desc">
-                <div class="col-xs-4">
-                  <img ng-src="{{experience.companyImage}}" />
-                  <strong>{{experience.companyName}}</strong>
-                  <p>{{experience.position}}</p>
-                  <p>{{experience.timeAtCompany}}</p>
-                  <div class="tags">
-                    <span class="tech-tag" ng-repeat="tech in experience.techUsed">{{tech}}</span>
-                  </div>
-                </div>
-                <div class="col-xs-8 accomplishments">
-                  <ul class="dashed">
-                    <li ng-repeat="accomplishment in experience.accomplishments">{{accomplishment}}</li>
-                  </ul>
-                </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          </dl>
+        </section>
+
+        <section>
+          <h2>Education</h2>
+          <p class="school">{{ctrl.config.education.schoolName}}</p>
+          <p>{{ctrl.config.education.degree}}</p>
+          <p class="muted">{{ctrl.config.education.fieldOfStudyInfo}}</p>
+        </section>
+      </aside>
+
+      <main class="main">
+        <section>
+          <h2>Summary</h2>
+          <p class="summary">{{ctrl.config.summary}}</p>
+        </section>
+
+        <section>
+          <h2>Experience</h2>
+          <ol class="timeline">
+            <li class="job" ng-repeat="experience in ctrl.config.experiences">
+              <p class="dates">{{experience.timeAtCompany}}</p>
+              <h3>{{experience.position}}, {{experience.companyName}}</h3>
+              <ul class="accomplishments">
+                <li ng-repeat="accomplishment in experience.accomplishments">{{accomplishment}}</li>
+              </ul>
+              <p class="tech" ng-if="experience.techUsed"><span>Tech:</span> {{experience.techUsed}}</p>
+            </li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Earlier experience</h2>
+          <ol class="timeline">
+            <li class="job" ng-repeat="experience in ctrl.config.earlierExperiences">
+              <p class="dates">{{experience.timeAtCompany}}</p>
+              <h3>{{experience.position}}, {{experience.companyName}}</h3>
+              <p class="earlier">{{experience.summary}}</p>
+            </li>
+          </ol>
+        </section>
+      </main>
+
     </div>
   </body>
 
