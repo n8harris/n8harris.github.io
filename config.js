@@ -1,171 +1,119 @@
 var config = {
   resumeImageSrc: "https://avatars3.githubusercontent.com/u/4176190?v=3&s=460",
   resumeOwner: "Nate Harris",
-  occupation: "Full-stack Web Developer",
+  occupation: "Staff Software Engineer",
   location: "Colorado Springs, CO",
+  summary: "Staff-level engineer and former engineering manager with 12+ years of experience building web platforms used by millions. Early engineer at Quantum Metric (now valued at over $1B), leading the Session Replay product, architecting major features from scratch, and cutting p95 first-frame load time from 19 seconds to under 5. Equally comfortable leading teams, making architectural decisions, and writing the code.",
   education: {
-    schoolLogo: "http://gdurl.com/gQTo",
     schoolName: "Cedarville University",
-    fieldOfStudyInfo: "Majored in Computer Science and Minored in Mathematics and Graphic Design. Graduated with Honor."
+    degree: "B.S. in Computer Science",
+    fieldOfStudyInfo: "Minors in Mathematics and Graphic Design. Graduated with honors."
   },
   moreInfo: [
     {
-      icon: "fa-github",
-      link: "https://github.com/n8harris",
-      linkName: "github.com/n8harris"
+      link: "mailto:nate@natepharris.me",
+      linkName: "nate@natepharris.me"
     },
     {
-      icon: "fa-gitlab",
-      link: "https://gitlab.com/n8harris",
-      linkName: "gitlab.com/n8harris"
-    },
-    {
-      icon: "fa-linkedin",
       link: "https://linkedin.com/in/n8harris",
       linkName: "linkedin.com/in/n8harris"
     },
     {
-      icon: "fa-envelope",
-      link: "mailto:nate@natepharris.me",
-      linkName: "nate@natepharris.me"
+      link: "https://github.com/n8harris",
+      linkName: "github.com/n8harris"
+    },
+    {
+      link: "https://gitlab.com/n8harris",
+      linkName: "gitlab.com/n8harris"
     }
+  ],
+  skills: [
+    { label: "Languages", items: "Go, TypeScript, JavaScript, Python, Elixir, Ruby, C#, SQL" },
+    { label: "Frontend", items: "React, Redux, MobX, D3, Webpack" },
+    { label: "Backend and data", items: "Node.js, MariaDB, MySQL, MongoDB, DynamoDB, graph databases" },
+    { label: "Infrastructure", items: "Kubernetes, Docker, ArgoCD, Grafana, GCP, AWS, Serverless, Chef, Jenkins" },
+    { label: "Leadership", items: "Team lead, engineering management, architecture and technical design" }
   ],
   experiences: [
     {
-      companyName: "SlingTV",
-      companyImage: "images/sling.png",
+      position: "Staff Software Engineer",
+      companyName: "Quantum Metric",
+      timeAtCompany: "Jan 2024 - Nov 2026",
+      accomplishments: [
+        "Led the Session Replay product team.",
+        "Redesigned how replays are stored and delivered to the client, reducing p95 first-frame load time from 19 seconds to under 5 seconds.",
+        "Completely rewrote the replay loader service, which retrieves stored replays and delivers them to the client with any needed data adjustments.",
+        "Built an HTML-to-JSON serializer that converts native app HTML view representations into a unified JSON format.",
+        "Fixed hundreds of bugs, many involving complex browser mechanics and optimizations."
+      ],
+      techUsed: "Go, TypeScript, JavaScript, React, Kubernetes, ArgoCD, Grafana, Google Cloud Platform (BigTable, GCS, BigQuery)"
+    },
+    {
+      position: "Founding Engineer",
+      companyName: "Audience Plus",
+      timeAtCompany: "Mar 2023 - Jan 2024",
+      accomplishments: [
+        "Wrote the first iteration of a custom graph database that takes content and media assets and changes how they display based on user personas."
+      ]
+    },
+    {
+      position: "Software Engineering Manager",
+      companyName: "Quantum Metric",
+      timeAtCompany: "Jul 2021 - Mar 2023",
+      accomplishments: [
+        "Oversaw and contributed to a complete frontend architectural overhaul of the Session Replay product.",
+        "Architected a custom windowed scrolling solution for the replay redesign, turning event scrolling on large replays from jittery to smooth.",
+        "Oversaw and contributed to Visible, a product that lets customers view UX friction metrics directly on their own site through widgets and browser overlays."
+      ]
+    },
+    {
+      position: "Senior Software Engineer",
+      companyName: "Quantum Metric",
+      timeAtCompany: "Jan 2019 - Jul 2021",
+      accomplishments: [
+        "One of the first engineers at a company now valued at over $1B.",
+        "Team lead on multiple projects.",
+        "Architected brand-new features from the ground up."
+      ],
+      techUsed: "JavaScript, TypeScript, React, Node.js, MariaDB, D3, Webpack, MobX, Google Cloud Platform, Docker"
+    },
+    {
       position: "Senior Software Developer",
-      timeAtCompany: "May 2017 - present",
-      techUsed: [
-        "ReactJS",
-        "Redux",
-        "Angular2",
-        "Rails",
-        "Elixir"
-      ],
+      companyName: "Sling TV",
+      timeAtCompany: "May 2017 - Jan 2019",
       accomplishments: [
-        "Currently working on the user management/payment processing system on sling.com",
-        "Currently architecting generic solutions to support a wide range of business/marketing flows",
-        "Currently working on our new platform which will be based on Elixir microservices and a React component library",
-        "Team lead and part of group making architectural decisions for an app that reaches millions of people every day"
-      ]
+        "Worked on the user management and payment processing system on sling.com.",
+        "Architected generic solutions to support a wide range of business and marketing flows.",
+        "Contributed to a new platform built on Elixir microservices and a React component library.",
+        "Team lead and part of the group making architectural decisions for an app reaching millions of people daily."
+      ],
+      techUsed: "React, Redux, Angular, Rails, Elixir"
+    }
+  ],
+  earlierExperiences: [
+    {
+      position: "Co-Founder / Software Developer",
+      companyName: "TipJar and Hively",
+      timeAtCompany: "2016 - 2017",
+      summary: "Built a Serverless/AWS microservice backend for tipping and authentication (TipJar). As sole developer, built a single-page app and REST API that matched employers with candidates by culture fit, using MapReduce to speed up matching (Hively, a 2016 Go Code Colorado winner)."
     },
     {
-      companyName: "TipJar",
-      companyImage: "http://gdurl.com/LRez",
-      position: "Co-Founder/Software Developer",
-      timeAtCompany: "January 2017 - present",
-      techUsed: [
-        "Serverless",
-        "AWS",
-        "Lambda",
-        "DynamoDB",
-        "ReactJS"
-      ],
-      accomplishments: [
-        "Currently developing a microservice architecture using the Serverless Framework to support authentication, giving tips, etc.",
-        "Currently working on a beacon service for the apps that will allow customer service employees to automatically send 'review' notifications to anyone they serve who has the app",
-        "Currently working on setting up server provisioning (Chef) for our CI server"
-      ]
-    },
-    {
-      companyName: "Hively",
-      companyImage: "http://gdurl.com/RKvi",
-      position: "Co-Founder/Software Developer",
-      timeAtCompany: "April 2016 - present",
-      techUsed: [
-        "MongoDB",
-        "CakePHP",
-        "BackboneJS",
-        "Gulp",
-        "Jenkins",
-        "PHPUnit",
-        "Karma"
-      ],
-      accomplishments: [
-        "Sole developer on project",
-        "Created a Single Page Application using CakePHP on the backend and BackboneJS for the frontend",
-        "Created REST API for use with web application as well as mobile apps",
-        "Created system to match employers with potential employees based on personality and company culture and used MapReduce algorithm to improve matching performance"
-      ]
-    },
-    {
-      companyName: "Focus on the Family",
-      companyImage: "http://gdurl.com/eYg6",
       position: "Software Developer",
-      timeAtCompany: "May 2015 - present",
-      techUsed: [
-        "MySQL",
-        "NodeJS",
-        "AngularJS",
-        "Ruby",
-        "Chef",
-        "Java",
-        "Objective-C"
-      ],
-      accomplishments: [
-        "Lead developer on project that reaches millions of people per month",
-        "Improved efficiency by creating recipes using Chef, implementing deployment scripts utilized by Jenkins, and developing Slack bots for the team to use",
-        "Redesigned payment system for product allowing multiple payment plans as well as a free trial option",
-        "Improved release time on products from 2 hours to a couple minutes",
-        "Improved testing by adding end to end tests and visual tests",
-        "Implemented numerous features on our suite of Android mobile applications"
-      ]
+      companyName: "Focus on the Family",
+      timeAtCompany: "May 2015 - 2017",
+      summary: "Lead developer on a product reaching millions of people per month. Cut release time from 2 hours to a few minutes with Chef and Jenkins automation, redesigned the payment system to support multiple plans and free trials, and added end-to-end and visual testing."
     },
     {
-      companyName: "Air Force Research Lab",
-      companyImage: "http://gdurl.com/CVAU",
       position: "Software Engineer",
+      companyName: "Air Force Research Lab",
       timeAtCompany: "May 2014 - May 2015",
-      techUsed: [
-        "C#",
-        "Python",
-        "VBScript",
-        "C++"
-      ],
-      accomplishments: [
-        "Developed an application using C# and Python to help the senior engineers more easily perform tests",
-        "Responsible for all software development on radar simulator project",
-        "Improved UX by adding data visualization of flight trajectories",
-        "Improved code coverage on tests to 80%"
-      ]
+      summary: "Sole developer on a radar simulator project. Built a C#/Python application that helped senior engineers run tests more easily by providing an interface to generate files for flight trajectory simulators, and raised test coverage to 80%."
     },
     {
-      companyName: "Ball Aerospace",
-      companyImage: "http://gdurl.com/B51P",
       position: "Software Engineer Intern",
+      companyName: "Ball Aerospace",
       timeAtCompany: "May 2013 - May 2014",
-      techUsed: [
-        "PHP",
-        "Memcached",
-        "CSS",
-        "HTML",
-        "JavaScript"
-      ],
-      accomplishments: [
-        "Worked as an intern during the summer",
-        "Developed a web-based application using PHP and Java",
-        "Improved UX of application by doing A/B testing",
-        "Improved database performance by adding indices and eliminating slow queries",
-        "Reduced stress on db by saving some db call results in memory using Memcached"
-      ]
-    },
-    /*{
-      companyName: "Cedarville University",
-      companyImage: "http://gdurl.com/gQTo",
-      position: "Web Developer",
-      timeAtCompany: "February 2012 - March 2014",
-      techUsed: [
-        "ColdFusion",
-        "jQuery",
-        "ASP.NET MVC"
-      ],
-      accomplishments: [
-        "Worked as a web developer during school",
-        "Added features to cedarville.edu as well as internal applications",
-        "Developed features using C#, ColdFusion, and jQuery",
-        "Implemented new mobile friendly design"
-      ]
-    }*/
+      summary: "Built a PHP/Java web app, improved UX through A/B testing, and improved database performance with indexing, query fixes, and Memcached."
+    }
   ]
-}
+};
