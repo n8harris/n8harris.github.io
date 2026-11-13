@@ -21,10 +21,6 @@ var config = {
     {
       link: "https://github.com/n8harris",
       linkName: "github.com/n8harris"
-    },
-    {
-      link: "https://gitlab.com/n8harris",
-      linkName: "gitlab.com/n8harris"
     }
   ],
   skills: [
